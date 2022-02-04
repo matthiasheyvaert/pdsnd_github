@@ -7,7 +7,18 @@
 Udacity - bikeshare project
 
 ### Description
-This project explores data of bike share systems for three major cities in USA. Descriptive statistics are presented and raw data is shown upon request by user.
+This project explores data of bike share systems for three major cities in USA: Washington, New York City and Chicago. Descriptive statistics about bike sharing are presented. Please find some examples of statistics below
+    most used start and end station
+    average trip Duration
+    most common month
+    ...
+
+Data can be filtered on
+    City
+    Day of week
+    Month
+Raw data is shown upon request by user.
+Code is written in Python (anaconda)
 
 ### Files used
 chicago.csv
