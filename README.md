@@ -4,7 +4,7 @@
 04/02/2022
 
 ### Project Title
-bikeshare project
+Udacity - bikeshare project
 
 ### Description
 This project explores data of bike share systems for three major cities in USA. Descriptive statistics are presented and raw data is shown upon request by user.
