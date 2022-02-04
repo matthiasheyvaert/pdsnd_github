@@ -112,6 +112,10 @@ def time_stats(df):
     most_common_day = df['day'].mode()[0]
     print("most common day is {}".format(most_common_day))
 
+    df['Start Time'] = pd.to_datetime(df['Start Time'])
+    df['day'] = df['Start Time'].dt.day_name()
+    least_common_day = df['day'].mode()[-1]
+    print("least common day is {}".format(least_common_day))
 
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['hour'] = df['Start Time'].dt.hour
