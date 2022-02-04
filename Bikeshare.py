@@ -112,6 +112,10 @@ def time_stats(df):
     most_common_day = df['day'].mode()[0]
     print("most common day is {}".format(most_common_day))
 
+    df['Start Time'] = pd.to_datetime(df['Start Time'])
+    df['day'] = df['Start Time'].dt.day_name()
+    least_common_day = df['day'].mode()[-1]
+    print("least common day is {}".format(least_common_day))
 
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['hour'] = df['Start Time'].dt.hour
@@ -140,6 +144,9 @@ def station_stats(df):
     combi_start_end = df.groupby(['Start Station', 'End Station']).size().idxmax()
     print("Most frequent combination is \n {}".format(combi_start_end))
 
+    combi_user_start = df.groupby(['Start Station', 'User Type']).size().idxmax()
+    print("Most frequent start station per user type is \n {}".format(combi_user_start))
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -152,11 +159,11 @@ def trip_duration_stats(df):
 
 
     total_duration = df['Trip Duration'].sum()
-    print("total travel time is {}".format(total_duration))
+    print("total travel time in seconds is {}".format(total_duration))
 
 
     average_duration = df['Trip Duration'].mean()
-    print("Average travel time is {}".format(average_duration))
+    print("Average travel time in seconds is {}".format(average_duration))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
