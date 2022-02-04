@@ -140,6 +140,9 @@ def station_stats(df):
     combi_start_end = df.groupby(['Start Station', 'End Station']).size().idxmax()
     print("Most frequent combination is \n {}".format(combi_start_end))
 
+    combi_user_start = df.groupby(['Start Station', 'User Type']).size().idxmax()
+    print("Most frequent start station per user type is \n {}".format(combi_user_start))
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
